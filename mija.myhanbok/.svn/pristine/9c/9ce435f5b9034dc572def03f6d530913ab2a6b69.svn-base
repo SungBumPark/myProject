@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Title</string>
+    <string name="menu_settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="kakao_talk">Kakao</string>
+    <string name="google_talk">Google</string>
+    <string name="call">Call</string>
+	<string name="sms">SMS</string>
+	<string name="menu">Menu</string>
+    
+    <string name="image1">image1</string>
+    <string name="image2">image2</string>
+    <string name="image3">image3</string>
+    <string name="image4">image4</string>
+    
+    <string name="menu01">menu01</string>
+    <string name="menu02">menu02</string>  
+    <string name="menu03">menu03</string>  
+    <string name="menu04">menu04</string>  
+    <string name="menu05">menu05</string>  
+    <string name="menu06">menu06</string>  
+    <string name="menu07">menu07</string>  
+    <string name="menu08">menu08</string>  
+    <string name="menu09">menu09</string>  
+    <string name="menu10">menu10</string>  
+    <string name="menu11">menu11</string>  
+    <string name="menu12">menu12</string>  
+        
+    
+</resources>

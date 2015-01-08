@@ -1,0 +1,353 @@
+package myhanbok.activity;
+
+import java.util.ArrayList;
+
+import myhanbok.adapter.MenuAdapter;
+import myhanbok.model.TabMenu;
+import myhanbok.slide.ClickListenerForScrolling;
+import myhanbok.slide.SizeCallbackForMenu;
+import myhanbok.slide.SlideView;
+import myhanbok.utilities.Config;
+import mija.myhanbok.R;
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
+
+
+public class IntromainActivity extends Activity implements OnClickListener {
+
+	ImageView introBtn, coordBtn, reserveBtn;
+	View infoView, mapView, socialView;
+	private SlideView scrollView;
+	private MenuAdapter menuAdapter;
+	private View menu;
+	private View app;
+	@SuppressWarnings("unused")
+	private View tpager;
+	private RelativeLayout over;
+	private ImageButton btnSlide;
+	private ImageButton btnProfile;
+	private ImageView addProfile;
+	private static boolean menuOut = false;
+	public static boolean canAppTouch = false;
+	private ArrayList<TabMenu> tabMenu = new ArrayList<TabMenu>();
+	private ClickListenerForScrolling scrollContext;
+	private TextView slide_name;
+	
+
+	int menuWidth;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.intromain);
+
+		init();
+		
+		introBtn = (ImageView) findViewById(R.id.inIntroBtn);
+		reserveBtn = (ImageView) findViewById(R.id.inReserveBtn);
+		coordBtn = (ImageView) findViewById(R.id.inCoordBtn);
+		introBtn.setOnClickListener(this);
+		reserveBtn.setOnClickListener(this);
+		coordBtn.setOnClickListener(this);
+
+
+		infoView = (View) findViewById(R.id.tpagerintro);
+		socialView = (View) findViewById(R.id.tpagervidieo);
+		mapView = (View) findViewById(R.id.tpagermap);
+		
+		Intent intent = getIntent();
+		String page = intent.getStringExtra("page");
+		
+		if(page.equals("2"))
+			initSocialView();
+		else if(page.equals("-1"))
+			initInfoView();
+
+	}
+
+	@Override
+	public void onClick(View v) {
+
+		switch (v.getId()) {
+
+		case R.id.inIntroBtn:
+			initInfoView();
+			break;
+
+		case R.id.inReserveBtn:
+			initSocialView();
+			break;
+
+		case R.id.inCoordBtn:
+			initMapView();
+			break;
+
+		}
+
+	}
+
+	public void init() {
+		LayoutInflater inflater = LayoutInflater.from(this);
+		scrollView = (SlideView) inflater.inflate(
+				R.layout.screen_scroll_with_list_menu, null);
+		setContentView(scrollView);
+
+		menu = inflater.inflate(R.layout.horz_scroll_menu, null);
+		app = inflater.inflate(R.layout.intromain, null);
+
+		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		getActionBar().setCustomView(R.layout.actionbar);
+
+		tpager = (View) findViewById(R.id.tpager);
+		ViewGroup tabBar = (ViewGroup) findViewById(R.id.tabBar);
+		tabMenu = Config.createTab();
+
+		slide_name = (TextView) menu.findViewById(R.id.slide_name);
+		over = (RelativeLayout) app.findViewById(R.id.over);
+		addProfile = (ImageView) menu.findViewById(R.id.add_profile);
+		addProfile.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(v
+						.getContext());
+				builder.setTitle("개인정보 입력이 필요합니다");
+
+				builder.setMessage("정보를 입력시겠습니까?");
+				builder.setNegativeButton("확인",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								Intent intent = new Intent(
+										getApplicationContext(),
+										JoinActivity.class);
+								startActivity(intent);
+								btnSlide.performClick();
+
+							}
+						});
+				builder.setPositiveButton("취소",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+							}
+						});
+				builder.show();
+			}
+		});
+		menuAdapter = new MenuAdapter(this, R.layout.link, tabMenu);
+		ListView listView = (ListView) menu.findViewById(R.id.list);
+		listView.setAdapter(menuAdapter);
+
+		scrollContext = new ClickListenerForScrolling(getApplicationContext(),
+				scrollView, menu, canAppTouch, menuOut, app, over);
+
+		btnSlide = (ImageButton) tabBar.findViewById(R.id.BtnSlide);
+		btnSlide.setOnClickListener(scrollContext);
+
+		btnProfile = (ImageButton) tabBar.findViewById(R.id.BtnProfile);
+		btnProfile.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				SharedPreferences prefs = getSharedPreferences("mija.hanbok", MODE_PRIVATE);
+				String state = prefs.getString("LOGIN_STATE", "");
+				if (state.equals("FALSE") ) {
+					Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+					startActivity(intent);
+				} else if (state.equals("TRUE")) {
+					Intent intent = new Intent(getApplication(),
+							MyDressRoomActivity.class);
+					startActivity(intent);
+				}
+			}
+		});
+
+		final View[] children = new View[] { menu, app };
+
+		// Scroll to app (view[1]) when layout finished.
+		int scrollToViewIdx = 1;
+
+		scrollView.initViews(children, scrollToViewIdx,
+				new SizeCallbackForMenu(btnSlide));
+
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@SuppressLint("SetJavaScriptEnabled")
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Intent intent;
+				
+
+				switch (position) {
+				case 0:
+					intent = new Intent(getApplicationContext(),
+							MainActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					break;
+				case 1:
+					intent = new Intent(getApplicationContext(),
+							IntromainActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					final String page = "-1";
+					intent.putExtra("page", page);	
+					startActivity(intent);
+					break;
+				case 2:
+					intent = new Intent(getApplicationContext(),
+						PreviewActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					break;
+				case 3:
+					intent = new Intent(getApplicationContext(),
+							WebviewActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					final String web1 = "1";
+					intent.putExtra("page", web1);	
+					startActivity(intent);
+					break;
+				case 4:
+					intent = new Intent(getApplicationContext(),
+							WebviewActivity.class);
+					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					final String web2 = "2";
+					intent.putExtra("page", web2);	
+					startActivity(intent);
+					break;
+				}
+
+			}
+		});
+
+		app.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// Context context = menu.getContext();
+
+				int menuWidth = menu.getMeasuredWidth();
+				// TODO Auto-generated method stub
+				if (scrollContext.isMenuOut()) {
+					scrollContext.closeMenu(menuWidth);
+				}
+			}
+		});
+
+	}
+
+	private void initSocialView() {
+		infoView.setVisibility(View.GONE);
+		socialView.setVisibility(View.VISIBLE);
+		mapView.setVisibility(View.GONE);
+		introBtn.setImageResource(R.drawable.intro_intro_below_b);
+		reserveBtn.setImageResource(R.drawable.intro_intro_video_on_b);
+		coordBtn.setImageResource(R.drawable.intro_intro_map_b);
+		
+		RelativeLayout first = (RelativeLayout) socialView.findViewById(R.id.firstVideo);
+		RelativeLayout second = (RelativeLayout) socialView.findViewById(R.id.secondVideo);
+		
+
+		
+		first.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent myIntent = new Intent(getApplicationContext(),
+						VideoViewActivity.class);
+				final String first = "1";
+				myIntent.putExtra("videoNo", first);
+				startActivityForResult(myIntent, 1);
+				
+			}
+		});
+		
+		second.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent myIntent = new Intent(getApplicationContext(),
+						VideoViewActivity.class);
+				final String second = "2";
+				myIntent.putExtra("videoNo", second);
+				startActivityForResult(myIntent, 1);
+				
+			}
+		});
+		
+	}
+
+	private void initInfoView() {
+		infoView.setVisibility(View.VISIBLE);
+		socialView.setVisibility(View.GONE);
+		mapView.setVisibility(View.GONE);
+		introBtn.setImageResource(R.drawable.intro_intro_below_on_b);
+		reserveBtn.setImageResource(R.drawable.intro_intro_video_b);
+		coordBtn.setImageResource(R.drawable.intro_intro_map_b);
+	}
+
+	private void initMapView() {
+		infoView.setVisibility(View.GONE);
+		socialView.setVisibility(View.GONE);
+		mapView.setVisibility(View.VISIBLE);
+		introBtn.setImageResource(R.drawable.intro_intro_below_b);
+		reserveBtn.setImageResource(R.drawable.intro_intro_video_b);
+		coordBtn.setImageResource(R.drawable.intro_intro_map_on_b);
+		
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode== 1){
+
+			Log.d("result Activity", "finish");
+			btnSlide.performClick();
+			btnSlide.performClick();
+
+		}
+	}
+	
+	@Override
+	protected void onPostResume() {
+		// TODO Auto-generated method stub
+		super.onPostResume();
+		SharedPreferences prefs = getSharedPreferences("mija.hanbok", MODE_PRIVATE);
+		String state = prefs.getString("LOGIN_STATE", "");
+		String name = prefs.getString("NAME", "") + " 님";
+		if(state.equals("FALSE"))
+			slide_name.setText("로그인을 해주세요");
+		else if(state.equals("TRUE"))
+			slide_name.setText(name);
+	}
+
+}

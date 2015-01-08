@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/true_false_popup"
+    android:background="@drawable/popup_bg" >
+
+    <TextView
+        android:id="@+id/true_false_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/popup_navigation"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/true_false_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/popup_text_bar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/popup_true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/selector_popup_true" />
+    
+    <ImageButton
+        android:id="@+id/popup_false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="180dp"
+        android:background="@drawable/selector_popup_false" />
+
+</RelativeLayout>

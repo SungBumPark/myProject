@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:layout_gravity="right"
+    a:gravity="right"
+    a:orientation="horizontal" >
+
+    <LinearLayout
+        a:id="@+id/menu"
+        a:layout_width="300dp"
+        a:layout_height="wrap_content"
+        a:background="@android:color/white"
+        a:orientation="vertical" >
+
+
+        <View
+            a:layout_width="fill_parent"
+            a:layout_height="1dip"
+            a:background="#FF7F00" />
+
+        <LinearLayout
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:background="@drawable/profile_bg"
+            a:orientation="vertical" >
+
+            <RelativeLayout
+                a:layout_width="fill_parent"
+                a:layout_height="match_parent"
+                a:layout_weight="3" >
+
+                <ImageView
+                    a:id="@+id/add_profile"
+                    a:layout_width="60dp"
+                    a:layout_height="60dp"
+                    a:layout_marginLeft="20dp"
+                    a:layout_marginTop="20dp"
+                    a:scaleType="fitXY"
+                    a:src="@drawable/add_profile_button" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                a:layout_width="fill_parent"
+                a:layout_height="match_parent"
+                a:orientation="vertical" 
+                a:layout_weight="1" >
+
+                <TextView
+                    a:id="@+id/slide_name"
+                    a:layout_width="wrap_content"
+                    a:layout_height="wrap_content"
+                    a:layout_marginLeft="20dp"
+                    a:textColor="@android:color/white"
+                    a:textSize="20sp"
+                    a:typeface="sans" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ListView
+            a:id="@+id/list"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:background="@android:color/white"
+            a:divider="#FFBF00"
+            a:scrollbars="vertical" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ktmap.android.map.KMap
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        appID="iBKuBOJrZ4ge1whjqHdSms39AsDRSNbyv4ZoYuGdm8I3fXD6yx"
+        userKey="GtBEK6UcmaG97MiO5w8rgDRIsqPvUTHijwZjdOU5FzgrG4fRLd" />
+    
+
+</LinearLayout>

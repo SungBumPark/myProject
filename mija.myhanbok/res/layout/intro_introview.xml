@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tpagerintro"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/intro_back"
+    android:padding="1dp"
+    android:orientation="vertical" >
+
+    <ImageView
+            android:id="@+id/TimageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/intro_top"
+            android:contentDescription="@string/image2" />
+
+        <ImageView
+            android:id="@+id/TimageView3"
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+      
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/intro_word"
+            android:contentDescription="@string/image3" />
+
+</LinearLayout>
+
+        
+        
+        
+        

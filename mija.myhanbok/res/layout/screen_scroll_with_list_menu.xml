@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<myhanbok.slide.SlideView xmlns:a="http://schemas.android.com/apk/res/android"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent"
+    a:layout_margin="0px"
+    a:background="#00ffffff"
+    a:fadingEdge="none"
+    a:fadingEdgeLength="0px"
+    a:padding="0px"
+    a:scrollbars="none" >
+
+    <LinearLayout
+        a:id="@+id/top"
+        a:layout_width="fill_parent"
+        a:layout_height="fill_parent"
+        a:layout_margin="0px"
+        a:background="#ffffffff"
+        a:orientation="horizontal"
+        a:padding="0px" >
+    </LinearLayout>
+</myhanbok.slide.SlideView>

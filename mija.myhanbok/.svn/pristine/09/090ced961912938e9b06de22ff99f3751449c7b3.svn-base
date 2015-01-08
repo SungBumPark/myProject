@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:id="@+id/pager"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:orientation="vertical"
+    tools:context="myhanbok.intro.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <View
+        a:layout_width="match_parent"
+        a:layout_height="1dip"
+        a:background="#FF7F00" />
+
+    <RelativeLayout
+        a:id="@+id/flip_layout"
+        a:layout_width="fill_parent"
+        a:layout_height="370dp"
+        a:orientation="horizontal" >
+
+        <ViewFlipper
+            a:id="@+id/flipper"
+            a:layout_width="fill_parent"
+            a:layout_height="fill_parent" >
+
+            <ImageView
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:contentDescription="@string/image1"
+                a:gravity="center_horizontal"
+                a:scaleType="fitXY"
+                a:src="@drawable/a" />
+
+            <ImageView
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:contentDescription="@string/image2"
+                a:gravity="center_horizontal"
+                a:scaleType="fitXY"
+                a:src="@drawable/b" />
+
+            <ImageView
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:contentDescription="@string/image3"
+                a:gravity="center_horizontal"
+                a:src="@drawable/c" />
+        </ViewFlipper>
+
+        <include
+            a:id="@+id/flip_coord_btn"
+            a:layout_width="match_parent"
+            a:layout_height="45dp"
+            a:layout_alignParentBottom="true"
+            layout="@layout/coord_tab" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        a:id="@+id/belowMenu"
+        a:layout_width="fill_parent"
+        a:layout_height="match_parent"
+        a:layout_below="@+id/flip_layout"
+        a:orientation="horizontal" >
+
+        <ImageView
+            a:id="@+id/imageView1"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:contentDescription="@string/image1"
+            a:gravity="center_horizontal"
+            a:scaleType="fitXY"
+            a:src="@drawable/main_video" />
+
+        <Button
+            a:id="@+id/video_play_button"
+            a:layout_width="53.5dp"
+            a:layout_height="53.5dp"
+            a:layout_alignBottom="@+id/imageView1"
+            a:layout_centerHorizontal="true"
+            a:layout_marginBottom="30dp"
+            a:background="@drawable/play_button"
+            a:contentDescription="@string/image1"
+            a:scaleType="fitXY" />
+
+        <myhanbok.belowmenu.BelowMenu
+            a:id="@+id/belowMain"
+            a:layout_width="match_parent"
+            a:layout_height="wrap_content"
+            a:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <include
+        a:id="@+id/progressDialog"
+        a:layout_width="match_parent"
+        a:layout_height="match_parent"
+        a:layout_centerInParent="true"
+        layout="@layout/progress_dialog" />
+
+    <include layout="@layout/over" />
+
+</RelativeLayout>

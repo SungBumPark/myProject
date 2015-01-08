@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item 
+     android:id="@+id/menu_item1" 
+	 android:orderInCategory="100"
+     android:title="@string/menu" android:showAsAction="always|withText">
+    </item>
+    <item 
+     android:id="@+id/menu_item2" 
+     android:title="@string/menu2" android:showAsAction="always|withText">
+    </item>
+    <item 
+     android:id="@+id/menu_item3" 
+     android:title="@string/menu3" android:showAsAction="always|withText">
+    </item>
+
+</menu>

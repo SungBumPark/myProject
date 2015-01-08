@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/join_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/join_background" >
+
+    <ImageView
+        android:id="@+id/join_add"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/join_add" />
+
+    <ImageView
+        android:id="@+id/join_profile_image"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/join_add"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/join_add_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_add"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/join_add_text" />
+
+    <ImageView
+        android:id="@+id/join_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_add_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/join_name" />
+
+    <TextView
+        android:id="@+id/join_name_text"
+        android:layout_width="290dp"
+        android:layout_height="43.5dp"
+        android:layout_below="@+id/join_add_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000007" />
+    <!--
+        EditText
+        android:id="@+id/join_name_input"
+        android:layout_width="290dp"
+        android:layout_height="43.5dp"
+        android:layout_below="@+id/join_add_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:imeOptions="actionDone"
+        android:background="#00000000"
+        android:inputType="text"
+        android:maxLength="10" /-->
+
+    <ImageView
+        android:id="@+id/join_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/join_sex" />
+
+    <TextView
+        android:id="@+id/join_sex_text"
+        android:layout_width="290dp"
+        android:layout_height="43.5dp"
+        android:layout_below="@+id/join_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center_vertical"
+        android:textColor="#000007" />
+
+    <ImageView
+        android:id="@+id/join_birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_sex"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/join_birth" />
+
+    <TextView
+        android:id="@+id/join_birth_text"
+        android:layout_width="290dp"
+        android:layout_height="43.5dp"
+        android:layout_below="@+id/join_sex"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center_vertical"
+        android:textColor="#000007" />
+    
+    <ImageView
+        android:id="@+id/join_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_birth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/join_contact" />
+    
+    <TextView
+        android:id="@+id/join_contact_text"
+        android:layout_width="290dp"
+        android:layout_height="43.5dp"
+        android:layout_below="@+id/join_birth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center_vertical"
+        android:textColor="#000007" />
+
+    <ImageView
+        android:id="@+id/join_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_contact"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/join_email" />
+    
+    <TextView
+        android:id="@+id/join_email_text"
+        android:layout_width="290dp"
+        android:layout_height="43.5dp"
+        android:layout_below="@+id/join_contact"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center_vertical"
+        android:textColor="#000007" />
+
+    <ImageView
+        android:id="@+id/join_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/join_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/join_submit" />
+
+    <include layout="@layout/over" />
+
+</RelativeLayout>

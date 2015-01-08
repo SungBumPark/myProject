@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical" 
+  android:gravity="center"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="@drawable/alarm_bg" >
+
+   <!-- Date -->
+   <DatePicker
+    android:id="@+id/date_picker"
+    android:layout_width="240dp"
+    android:layout_height="wrap_content" 
+    android:background="@color/white"
+    />
+   
+   
+   <!-- Time -->
+
+   <TimePicker
+       android:id="@+id/time_picker"
+       android:layout_width="240dp"
+       android:layout_height="wrap_content"
+       android:background="@color/white"
+        />
+  
+   <!-- Button -->
+   <LinearLayout
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+   
+    <Button
+        android:id="@+id/set"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/basic_btn"
+        android:onClick="mOnClick"
+        android:text="등록" />
+    
+    <Button
+     android:id="@+id/reset"
+     android:layout_width="80dp"
+     android:layout_height="wrap_content"
+     android:background="@drawable/basic_btn"
+     android:onClick="mOnClick" 
+     android:text="초기화" />
+    </LinearLayout>
+   
+   <TextView
+    android:id="@+id/text_view"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+ </LinearLayout>

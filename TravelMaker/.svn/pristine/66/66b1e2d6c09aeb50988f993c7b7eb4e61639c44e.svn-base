@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/updateBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".UpdateActivity" >
+
+    <TextView
+        android:id="@+id/updateTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/updateContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateTitleText"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/updateContentEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateContentText"
+        android:singleLine="true"
+        android:inputType="text" />
+        
+    <TextView
+        android:id="@+id/updateColorTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateContentEdit"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/updateRedColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/updateRedSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/updateOKBtn"
+        android:layout_alignTop="@+id/updateRedSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/updateRedSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateColorTitleText"
+        android:layout_toRightOf="@+id/updateOKBtn" />
+    
+    <TextView
+        android:id="@+id/updateGreenColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/updateGreenSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/updateOKBtn"
+        android:layout_alignTop="@+id/updateGreenSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <SeekBar
+        android:id="@+id/updateGreenSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateRedSeekBar"
+        android:layout_toRightOf="@+id/updateOKBtn" />
+
+    <TextView
+        android:id="@+id/updateBlueColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/updateBlueSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/updateOKBtn"
+        android:layout_alignTop="@+id/updateBlueSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/updateBlueSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateGreenSeekBar"
+        android:layout_toRightOf="@+id/updateOKBtn" />
+    
+    <TextView
+        android:id="@+id/updateAlphaColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/updateAlphaSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/updateOKBtn"
+        android:layout_alignTop="@+id/updateAlphaSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/updateAlphaSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/updateBlueSeekBar"
+        android:layout_toRightOf="@+id/updateOKBtn" />
+    
+    <TextView
+        android:id="@+id/updateColorTestText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/updateOKBtn"
+        android:layout_alignLeft="@+id/updateAlphaColorText"
+        android:layout_alignRight="@+id/updateAlphaSeekBar"
+        android:layout_below="@+id/updateAlphaColorText"
+        android:gravity="center"
+        android:text="@string/app_name_insert_color"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <Button
+        android:id="@+id/updateOKBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/common_use_ok_btn" />
+
+    <Button
+        android:id="@+id/updateCancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/common_use_cancel_btn" />
+    
+</RelativeLayout>

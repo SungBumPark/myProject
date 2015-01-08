@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Travel Maker</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="title_section1">"여행 정보"</string>
+    <string name="title_section2">"일정 관리"</string>
+    <string name="title_section3">"커뮤니티"</string>
+    <string name="TextView1">Hello Dear!</string>
+    <string name="TextView2">This is first tab fragment!</string>
+    <string name="TextView3">You will see new menus </string>
+    <string name="TextView4">when you push the menu key!</string>
+    <string name="menu">menu1</string>
+    <string name="menu2">menu2</string>
+    <string name="menu3">menu3</string>
+    
+    <!-- request url -->
+    <string name="convert_coord_url">http://openapi.kt.com/maps/etc/ConvertCoord</string>
+    <string name="route_search_url">http://openapi.kt.com/maps/etc/RouteSearch</string>
+
+    <!-- app id -->
+    <string name="app_id">8100D634:T77FC44E621CCB4</string>
+    <string name="Time_text">Time</string>
+    <string name="Day_text">Day</string>
+    <string name="app_name_main">일정</string>
+    <string name="main_make">일정 추가</string>
+    <string name="main_load">시간표 불러오기</string>
+    <string name="main_del">일정 삭제</string>
+    <string name="main_bgchange">배경화면 변경하기</string>
+    <string name="main_help">도 움 말</string>
+    <string name="main_exit">종 료</string>
+    <string name="app_name_make">일정</string>
+    <string name="make_time_count">교시 선택</string>
+    <string name="make_start_time">시작 시간</string>
+    <string name="make_time_space">시간 간격</string>
+    <string name="make_break_time">쉬는 시간</string>
+    <string name="make_button">만들기</string>
+    <string name="app_name_table">일정표</string>
+    <string name="app_name_update_time">시간표 - 시간 수정하기</string>
+    <string name="update_time_start">시작 시간</string>
+    <string name="update_time_end">종료 시간</string>
+    <string name="app_name_insert">일정 등록</string>
+    <string name="app_name_insert_color">표시색 지정</string>
+    <string name="app_name_update">일정 수정</string>
+    <string name="app_name_explorer">시간표 - 파일찾기</string>
+    <string name="app_name_help">시간표 - 도움말</string>
+    <string name="common_use_ok_btn">확인</string>
+    <string name="common_use_cancel_btn">취소</string>
+</resources>
+
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    a:id="@+id/tpager"
+    a:layout_width="match_parent"
+    a:layout_height="match_parent"
+    a:background="@drawable/intro_back"
+    tools:context="myhanbok.intro.IncludeTestActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <RelativeLayout
+        a:id="@+id/return_arrow_layout"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_marginTop="200dp"
+        a:orientation="horizontal"
+        a:visibility="invisible" >
+
+        <View
+            a:id="@+id/menu_return_arrow"
+            a:layout_width="50dp"
+            a:layout_height="50dp"
+            a:layout_marginLeft="10dp"
+            a:background="@drawable/menu_return_arrow"
+            a:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        a:id="@+id/intromainview"
+        a:layout_width="match_parent"
+        a:layout_height="wrap_content"
+        a:padding="5dp" >
+
+        <include
+            a:id="@+id/tpagerintro"
+            a:layout_width="fill_parent"
+            a:layout_height="fill_parent"
+            layout="@layout/intro_introview" />
+
+        <include
+            a:id="@+id/tpagervidieo"
+            a:layout_width="fill_parent"
+            a:layout_height="fill_parent"
+            layout="@layout/intro_videoview" />
+
+        <include
+            a:id="@+id/tpagermap"
+            a:layout_width="fill_parent"
+            a:layout_height="fill_parent"
+            layout="@layout/intro_mapview" />
+    </RelativeLayout>
+
+    <FrameLayout
+        a:id="@+id/testmenutab"
+        a:layout_width="fill_parent"
+        a:layout_height="wrap_content"
+        a:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            a:id="@+id/topMenuLinearlayout"
+            a:layout_width="fill_parent"
+            a:layout_height="fill_parent" >
+
+            <ImageView
+                a:id="@+id/inIntroBtn"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content" />
+
+            <ImageView
+                a:id="@+id/inReserveBtn"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content" />
+
+            <ImageView
+                a:id="@+id/inCoordBtn"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content" />
+
+            <ImageView
+                a:layout_width="fill_parent"
+                a:layout_height="fill_parent"
+                a:layout_weight="1"
+                a:background="@drawable/tab_line_bg" >
+            </ImageView>
+        </LinearLayout>
+
+        <FrameLayout
+            a:layout_width="wrap_content"
+            a:layout_height="wrap_content"
+            a:layout_gravity="right"
+            a:layout_marginRight="5dp"
+            a:layout_marginTop="10dp" >
+        </FrameLayout>
+    </FrameLayout>
+
+    <include layout="@layout/over" />
+
+</RelativeLayout>

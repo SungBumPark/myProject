@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mija.myhanbok"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="방미자 한복"
+        android:largeHeap="true"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <activity
+            android:name="myhanbok.activity.IntromainActivity"
+            android:label="방미자 한복"
+            android:windowSoftInputMode="adjustResize|adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="myhanbok.activity.MyDressRoomActivity"
+            android:label="방미자 한복"
+            android:windowSoftInputMode="adjustResize|adjustPan" 
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="myhanbok.activity.WebviewActivity"
+            android:label="방미자 한복"
+            android:windowSoftInputMode="adjustResize|adjustPan" 
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="myhanbok.activity.test"
+            android:label="방미자 한복"
+            android:windowSoftInputMode="adjustResize|adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="myhanbok.activity.LoginActivity"
+            android:label="방미자 한복"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustResize|adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="myhanbok.activity.MainActivity"
+            android:label="방미자 한복"
+            android:windowSoftInputMode="adjustResize|adjustPan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="myhanbok.activity.StartApp"
+            android:label="방미자 한복"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="myhanbok.activity.VideoViewActivity"
+            android:label="방미자 한복"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+        <activity
+            android:name="myhanbok.activity.JoinActivity"
+            android:configChanges="orientation|keyboard"
+            android:label="방미자 한복"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+        <activity
+            android:name="myhanbok.activity.PreviewActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:label="방미자 한복"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan" >
+        </activity>
+        <activity
+            android:name="myhanbok.activity.MypatternActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:label="방미자 한복"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+            android:windowSoftInputMode="adjustResize|adjustPan" >
+        </activity>
+    </application>
+
+</manifest>

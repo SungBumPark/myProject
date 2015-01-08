@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/insertBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".InsertActivity" >
+
+    <TextView
+        android:id="@+id/insertTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/insertContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertTitleText"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/insertContentEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertContentText"
+        android:singleLine="true"
+        android:inputType="text" />
+        
+    <TextView
+        android:id="@+id/insertColorTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertContentEdit"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/insertRedColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/insertRedSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/insertOKBtn"
+        android:layout_alignTop="@+id/insertRedSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/insertRedSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertColorTitleText"
+        android:layout_toRightOf="@+id/insertOKBtn" />
+    
+    <TextView
+        android:id="@+id/insertGreenColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/insertGreenSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/insertOKBtn"
+        android:layout_alignTop="@+id/insertGreenSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <SeekBar
+        android:id="@+id/insertGreenSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertRedSeekBar"
+        android:layout_toRightOf="@+id/insertOKBtn" />
+
+    <TextView
+        android:id="@+id/insertBlueColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/insertBlueSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/insertOKBtn"
+        android:layout_alignTop="@+id/insertBlueSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/insertBlueSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertGreenSeekBar"
+        android:layout_toRightOf="@+id/insertOKBtn" />
+    
+    <TextView
+        android:id="@+id/insertAlphaColorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/insertAlphaSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/insertOKBtn"
+        android:layout_alignTop="@+id/insertAlphaSeekBar"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <SeekBar
+        android:id="@+id/insertAlphaSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insertBlueSeekBar"
+        android:layout_toRightOf="@+id/insertOKBtn" />
+    
+    <TextView
+        android:id="@+id/insertColorTestText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/insertOKBtn"
+        android:layout_alignLeft="@+id/insertAlphaColorText"
+        android:layout_alignRight="@+id/insertAlphaSeekBar"
+        android:layout_below="@+id/insertAlphaColorText"
+        android:gravity="center"
+        android:text="@string/app_name_insert_color"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <Button
+        android:id="@+id/insertOKBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/common_use_ok_btn" />
+
+    <Button
+        android:id="@+id/insertCancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/common_use_cancel_btn" />
+    
+</RelativeLayout>

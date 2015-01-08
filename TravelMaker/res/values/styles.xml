@@ -1,0 +1,23 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light" />
+
+    <style name="DropDownButtonStyle" parent="android:style/Widget.Holo.Light.Spinner">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FF333333</item>
+        <item name="android:paddingLeft">12dip</item>
+    </style>
+    
+    <style name="ListHeaderText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">4dip</item>
+        <item name="android:paddingLeft">12dip</item>
+    </style>
+    
+    <style name="ListItemText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">12dip</item>
+    </style>
+    
+</resources>
